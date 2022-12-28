@@ -168,7 +168,7 @@ class TripController extends Controller
            
 
             $Response = [
-                    'account_status' => $aacountStatus,
+                    'account_status' => "approved",
                     'service_status' => $serviceStatus,
                     'requests' => $IncomingRequests,
                     'provider_details' => $Provider,
