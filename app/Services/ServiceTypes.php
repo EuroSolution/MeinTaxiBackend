@@ -128,9 +128,15 @@ class ServiceTypes{
                 $requestarr['d_longitude']=$request['d_longitude'];
                 $requestarr['service_type']=$request['service_type'];
 
-                $tax_percentage = Setting::get('tax_percentage');
+                /*
+                 * All Extra amount commented
+                 * $tax_percentage = Setting::get('tax_percentage');
                 $commission_percentage = Setting::get('commission_percentage');
                 $surge_trigger = Setting::get('surge_trigger');
+                */
+                $tax_percentage = 0;
+                $commission_percentage = 0;
+                $surge_trigger = 0;
                
                 $price_response=$this->applyPriceLogic($requestarr);
 
@@ -180,7 +186,8 @@ class ServiceTypes{
 
                     }    
 
-                    $surge_percentage = 1+(Setting::get('surge_percentage')/100)."X";
+                    //$surge_percentage = 1+(Setting::get('surge_percentage')/100)."X";
+                    $surge_percentage = 0;
                 }
 
                 if (isset($request['rental_providers'])) {
