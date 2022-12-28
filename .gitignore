@@ -8,3 +8,6 @@ Homestead.yaml
 .env
 /public/uploads/*
 /bootstrap/*
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
