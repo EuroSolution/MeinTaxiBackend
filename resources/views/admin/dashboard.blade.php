@@ -89,15 +89,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-6 col-xs-12">
-			<div class="box box-block bg-white tile tile-1 mb-2">
-				<div class="t-icon right"><span class="bg-warning"></span><i class="ti-rocket"></i></div>
-				<div class="t-content">
-					<h6 class="text-uppercase mb-1">@lang('admin.dashboard.fleets')</h6>
-					<h1 class="mb-1">{{$fleet}}</h1>
-				</div>
-			</div>
-		</div>
+{{--		<div class="col-lg-3 col-md-6 col-xs-12">--}}
+{{--			<div class="box box-block bg-white tile tile-1 mb-2">--}}
+{{--				<div class="t-icon right"><span class="bg-warning"></span><i class="ti-rocket"></i></div>--}}
+{{--				<div class="t-content">--}}
+{{--					<h6 class="text-uppercase mb-1">@lang('admin.dashboard.fleets')</h6>--}}
+{{--					<h1 class="mb-1">{{$fleet}}</h1>--}}
+{{--				</div>--}}
+{{--			</div>--}}
+{{--		</div>--}}
 	</div>
 
 	<div class="row row-md mb-2">
