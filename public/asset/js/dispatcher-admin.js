@@ -330,7 +330,9 @@ class DispatcherCancelledListItem extends React.Component {
                                     <h6 className="media-heading">From: {trip.s_address}</h6>
                                     <h6 className="media-heading">To: {trip.d_address ? trip.d_address : "Not Selected"}</h6>
                                     <h6 className="media-heading">Payment: {trip.payment_mode}</h6>
-                                    <progress className="progress progress-success progress-sm" max="100"></progress>
+                                    {(trip.status === 'COMPLETED' || trip.status === 'SCHEDULED' || trip.status === 'SEARCHING') ?
+                                        <progress className="progress progress-success progress-sm" max="100"></progress> : ''
+                                    }
                                     <span className="text-muted">Cancelled at : {trip.updated_at}</span>
                                 </div>
                             </div>

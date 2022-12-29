@@ -56,17 +56,17 @@
 					<li><a href="{{ route('admin.dispatch-manager.create') }}">@lang('admin.include.add_new_dispatcher')</a></li>
 				</ul>
 			</li>
-			<li class="with-sub">
-				<a href="#" class="waves-effect  waves-light">
-					<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-					<span class="s-icon"><i class="ti-crown"></i></span>
-					<span class="s-text">@lang('admin.include.fleet_owner')</span>
-				</a>
-				<ul>
-					<li><a href="{{ route('admin.fleet.index') }}">@lang('admin.include.list_fleets')</a></li>
-					<li><a href="{{ route('admin.fleet.create') }}">@lang('admin.include.add_new_fleet_owner')</a></li>
-				</ul>
-			</li>
+{{--			<li class="with-sub">--}}
+{{--				<a href="#" class="waves-effect  waves-light">--}}
+{{--					<span class="s-caret"><i class="fa fa-angle-down"></i></span>--}}
+{{--					<span class="s-icon"><i class="ti-crown"></i></span>--}}
+{{--					<span class="s-text">@lang('admin.include.fleet_owner')</span>--}}
+{{--				</a>--}}
+{{--				<ul>--}}
+{{--					<li><a href="{{ route('admin.fleet.index') }}">@lang('admin.include.list_fleets')</a></li>--}}
+{{--					<li><a href="{{ route('admin.fleet.create') }}">@lang('admin.include.add_new_fleet_owner')</a></li>--}}
+{{--				</ul>--}}
+{{--			</li>--}}
 			<li class="with-sub">
 				<a href="#" class="waves-effect  waves-light">
 					<span class="s-caret"><i class="fa fa-angle-down"></i></span>
