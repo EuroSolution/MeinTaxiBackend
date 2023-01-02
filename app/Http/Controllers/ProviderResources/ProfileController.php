@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ProviderResources;
 
+use App\ProviderDailyKm;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -315,7 +316,28 @@ class ProfileController extends Controller
             if(count($OfflineOpenRequest)>0) {
                 RequestFilter::whereIn('id',$OfflineOpenRequest)->delete();
             }   
-           
+
+            if ($request->service_status == 'active'){
+                ProviderDailyKm::create([
+                    'provider_id' => $provider,
+                    'start_date' => date('Y-m-d H:i:s'),
+                    'start_km'  => $request->km,
+                    'status' => 0
+                ]);
+            }else{
+                $providerKms = ProviderDailyKm::where('provider_id', $provider)->where('status', 0)
+                    ->orderBy('id', 'DESC')->first();
+                if ($providerKms != null){
+                    $diffKm = ($request->km - $providerKms->start_km);
+                    $providerKms->update([
+                        'end_date' => date('Y-m-d H:i:s'),
+                        'end_km' => $request->km,
+                        'total_km' => $diffKm,
+                        'status' => 1
+                    ]);
+                }
+            }
+
             $Provider->service->update(['status' => $request->service_status]);
         } else {
             return response()->json(['error' => trans('api.provider.not_approved')]);
