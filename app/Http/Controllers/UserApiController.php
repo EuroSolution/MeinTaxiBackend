@@ -578,9 +578,12 @@ class UserApiController extends Controller
                 $UserRequest->surge = 1;
             }
 
-            if($request->has('schedule_date') && $request->has('schedule_time')){
-                $UserRequest->schedule_at = date("Y-m-d H:i:s",strtotime("$request->schedule_date $request->schedule_time"));
-                $UserRequest->is_scheduled = 'YES';
+            if ($request->has('is_scheduled') && $request->get('is_scheduled') == 1) {
+                if ($request->has('schedule_date') && $request->has('schedule_time')) {
+                    $UserRequest->schedule_at = date("Y-m-d H:i:s", strtotime("$request->schedule_date $request->schedule_time"));
+                    $UserRequest->is_scheduled = 'YES';
+                    $UserRequest->status = 'SCHEDULED';
+                }
             }
 
              if((Setting::get('manual_request',0) == 0) && (Setting::get('broadcast_request',0) == 0)){
