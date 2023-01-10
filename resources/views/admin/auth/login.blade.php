@@ -55,7 +55,7 @@
                     <ul class="nav nav-tabs nav-justified" role="tablist">
                         <li @if (!$errors->has('login_type')) class="active" @endif><a href="#signup" role="tab" data-toggle="tab">Admin</a></li>
                         <li @if ($errors->has('login_type') && $errors->first('login_type') == 'dispatcher')  class="active" @endif><a href="#dispatcher" role="tab" data-toggle="tab">Dispatcher</a></li>
-                        <li @if ($errors->has('login_type') && $errors->first('login_type') == 'fleet')  class="active" @endif><a href="#fleet" role="tab" data-toggle="tab">Fleet</a></li>
+                        <!--<li @if ($errors->has('login_type') && $errors->first('login_type') == 'fleet')  class="active" @endif><a href="#fleet" role="tab" data-toggle="tab">Fleet</a></li>-->
                          <li @if ($errors->has('login_type') && $errors->first('login_type') == 'account')  class="active" @endif><a href="#account" role="tab" data-toggle="tab">Account</a></li>
                     </ul>
                     <div class="tab-content">
