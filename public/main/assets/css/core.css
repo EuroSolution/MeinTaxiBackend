@@ -151,7 +151,7 @@ a:active {
     left: 0;
     margin-top: 60px;
     width: 220px;
-    background-color: #FFD700;
+    background-color: #fdb715;
 }
 
 @media (max-width: 767px) {
@@ -196,7 +196,7 @@ a:active {
     display: block;
     position: relative;
     padding: 0.75rem 1.25rem;
-    color: #ffffff;
+    color: #222222;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
