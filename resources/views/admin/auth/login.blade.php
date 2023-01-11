@@ -55,12 +55,12 @@
                     <ul class="nav nav-tabs nav-justified" role="tablist">
                         <li @if (!$errors->has('login_type')) class="active" @endif><a href="#signup" role="tab" data-toggle="tab">Admin</a></li>
                         <li @if ($errors->has('login_type') && $errors->first('login_type') == 'dispatcher')  class="active" @endif><a href="#dispatcher" role="tab" data-toggle="tab">Dispatcher</a></li>
-                        <li @if ($errors->has('login_type') && $errors->first('login_type') == 'fleet')  class="active" @endif><a href="#fleet" role="tab" data-toggle="tab">Fleet</a></li>
+                        <!--<li @if ($errors->has('login_type') && $errors->first('login_type') == 'fleet')  class="active" @endif><a href="#fleet" role="tab" data-toggle="tab">Fleet</a></li>-->
                          <li @if ($errors->has('login_type') && $errors->first('login_type') == 'account')  class="active" @endif><a href="#account" role="tab" data-toggle="tab">Account</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade @if (!$errors->has('login_type')) active @endif in" id="signup">
-                            <h2 class="text-uppercase text-center"> Iniciar sesión</h2>
+                            <h2 class="text-uppercase text-center"> Login</h2>
                             <form id="signup" role="form" method="POST" action="{{ url('/admin/login') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade @if ($errors->has('login_type') && $errors->first('login_type') == 'dispatcher') active @endif in" id="dispatcher">
-                            <h2 class="text-uppercase text-center">Iniciar sesión</h2>
+                            <h2 class="text-uppercase text-center">Login</h2>
                             <form id="login" role="form" method="POST" action="{{ url('/dispatcher/login') }}">
                              {{ csrf_field() }}
                                 <div class="form-group">
@@ -133,7 +133,7 @@
                         </div>
                         <!-- Fleet -->
                         <div class="tab-pane fade @if ($errors->has('login_type') && $errors->first('login_type') == 'fleet')  active @endif in" id="fleet">
-                            <h2 class="text-uppercase text-center">Iniciar sesión</h2>
+                            <h2 class="text-uppercase text-center">Login</h2>
                             <form id="login" role="form" method="POST" action="{{ url('/fleet/login') }}">
                              {{ csrf_field() }}
                                 <div class="form-group">
@@ -171,7 +171,7 @@
 
                          <!-- Fleet -->
                         <div class="tab-pane fade @if ($errors->has('login_type') && $errors->first('login_type') == 'account')  active @endif in" id="account">
-                            <h2 class="text-uppercase text-center">Iniciar sesión</h2>
+                            <h2 class="text-uppercase text-center">Login</h2>
                             <form id="login" role="form" method="POST" action="{{ url('/account/login') }}">
                              {{ csrf_field() }}
                                 <div class="form-group">

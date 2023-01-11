@@ -281,12 +281,13 @@ function assignProviderShow(providers, trip) {
     console.log('assignProviderShow', trip, providers)
 
     var bounds = new google.maps.LatLngBounds();
-    bounds.extend({lat: trip.s_latitude, lng: trip.s_longitude});
-    bounds.extend({lat: trip.d_latitude, lng: trip.d_longitude});
+    bounds.extend({lat: parseFloat(trip.s_latitude), lng: parseFloat(trip.s_longitude)});
+    bounds.extend({lat: parseFloat(trip.d_latitude), lng: parseFloat(trip.d_longitude)});
+    
 
     providers.forEach(function(provider) {
         var marker = new google.maps.Marker({
-            position: {lat: provider.latitude, lng: provider.longitude},
+            position: {lat: parseFloat(provider.latitude), lng: parseFloat(provider.longitude)},
             map: map,
             provider_id: provider.id,
             title: provider.first_name + " " + provider.last_name,
@@ -316,7 +317,9 @@ function assignProviderShow(providers, trip) {
 }
 
 function assignProviderPopPicked(provider) {
-    var index;
+    var index = 0;
+    console.log(provider);
+    console.log(mapMarkers);
     for (var i = mapMarkers.length - 1; i >= 0; i--) {
         if(mapMarkers[i].provider_id == provider.id) {
             index = i;

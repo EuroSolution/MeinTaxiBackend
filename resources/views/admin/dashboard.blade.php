@@ -136,23 +136,7 @@
 								@endif
 							</tr>
 
-							<tr>
-								<th scope="row">Fleet Credit</th>
-								@if($wallet['fleet_credit'])
-									@php($total=$total-($wallet['fleet_credit'][0]['total_credit']))
-									<td class="text-success">{{currency($wallet['fleet_credit'][0]['total_credit'])}}</td>
-								@else
-									<td class="text-success">{{currency()}}</td>		
-								@endif	
-							</tr>
-							<tr>
-								<th scope="row">Fleet Debit</th>
-								@if($wallet['fleet_debit'])								
-									<td class="text-danger">{{currency($wallet['fleet_debit'][0]['total_debit'])}}</td>
-								@else
-									<td class="text-danger">{{currency()}}</td>		
-								@endif	
-							</tr>
+							
 							<tr>
 								<th scope="row">Commission</th>
 								<td class="text-success">{{currency($wallet['admin_commission'])}}</td>

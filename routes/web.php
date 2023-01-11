@@ -153,6 +153,7 @@ Route::group(['prefix' => 'account'], function () {
 */
 
 Route::get('/', function () {
+    return redirect('admin');
     return view('newindex');
 });
 
