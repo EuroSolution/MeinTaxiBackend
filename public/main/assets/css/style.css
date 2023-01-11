@@ -22,7 +22,7 @@ btn {
 
 .btn-larger {
     padding: 15px 40px !important;
-    border: 2px solid #ea212e !important;
+    border: 2px solid #fdb615 !important;
     ;
     border-radius: 0px !important;
     ;
@@ -30,7 +30,7 @@ btn {
     font-family: 'Helvetica', sans-serif;
     font-size: 18px;
     font-weight: 300;
-    color: #ea212e;
+    color: #fdb615;
     background-color: transparent;
     -webkit-transition: all .6s;
     -moz-transition: all .6s;
@@ -42,9 +42,9 @@ btn {
 .btn-larger:active,
 .btn-larger.active,
 .open .dropdown-toggle.btn-larger {
-    border-color: #ea212e;
+    border-color: #fdb615;
     color: #fff;
-    background-color: #ea212e;
+    background-color: #fdb615;
     border-radius: 0
 }
 
@@ -113,7 +113,7 @@ div#form {
 
 .details .text-left {
     text-align: left;
-    color: #ea212e;
+    color: #fdb615;
     border-bottom: 1px solid #dec873;
     padding-bottom: 12px;
 }
@@ -133,7 +133,7 @@ div#form {
 #userform .nav-tabs.nav-justified>li>a {
     text-transform: uppercase;
     font-size: 13px;
-    color: #ea212e;
+    color: #fdb615;
     background-color: rgba(90, 90, 90, 0.5);
 }
 
@@ -141,7 +141,7 @@ div#form {
 #userform .nav-tabs.nav-justified>.active>a:hover,
 #userform .nav-tabs.nav-justified>.active>a:focus {
     border: 0;
-    background: #ea212e;
+    background: #fdb615;
     color: white;
     border-radius: 0;
 }
@@ -164,7 +164,7 @@ div#form {
 }
 
 #userform .nav-tabs.nav-justified>li>a:hover {
-    background: #ea212e;
+    background: #fdb615;
     color: #FFF;
     border-radius: 0;
     border: 0;
@@ -176,7 +176,7 @@ div#form {
 #userform .nav-tabs>li.active>a,
 #userform .nav-tabs>li.active>a:hover,
 #userform .nav-tabs>li.active>a:focus {
-    color: #ea212e;
+    color: #fdb615;
     cursor: default;
     background-color: transparent;
     border: 0;
@@ -193,7 +193,7 @@ div#form {
         transition: all .6s;
     }
     #userform .nav-tabs.nav-justified>li>a:hover {
-        background-color: #ea212e;
+        background-color: #fdb615;
         border-color: transparent;
         border: 0;
         -webkit-transition: all .6s;
@@ -248,7 +248,7 @@ div#form {
 }
 
 #userform .form-control:focus {
-    border-color: #ea212e;
+    border-color: #fdb615;
     box-shadow: none;
 }
 
@@ -277,7 +277,7 @@ div#form {
 
 #userform #signup .form-group label .req {
     margin: 2px;
-    color: #ea212e;
+    color: #fdb615;
 }
 
 #userform #signup .form-group label.active {
@@ -314,7 +314,7 @@ div#form {
 
 #userform #login .form-group label .req {
     margin: 2px;
-    color: #ea212e;
+    color: #fdb615;
 }
 
 #userform #login .form-group label.active {
