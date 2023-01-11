@@ -139,7 +139,7 @@ class DispatcherController extends Controller
             $Provider = Provider::findOrFail($provider_id);
 
             $Request->provider_id = $Provider->id;
-            $Request->status = 'STARTED';
+            //$Request->status = 'STARTED';
             $Request->current_provider_id = $Provider->id;
             $Request->save();
 
@@ -270,8 +270,10 @@ class DispatcherController extends Controller
             $UserRequest->use_wallet = 0;
             $UserRequest->surge = 0;        // Surge is not necessary while adding a manual dispatch
 
-            if($request->has('schedule_time')) {
+            if($request->schedule_time != null && $request->schedule_time != "") {
                 $UserRequest->schedule_at = Carbon::parse($request->schedule_time);
+                $UserRequest->status = 'SCHEDULED';
+                $UserRequest->is_scheduled = 'YES';
             }
 
             $UserRequest->save();
