@@ -24,6 +24,10 @@ class DispatcherPanel extends React.Component {
             this.setState({
                 listContent: 'dispatch-cancelled'
             });
+        }else if(filter == 'scheduled'){
+            this.setState({
+                listContent: 'dispatch-scheduled'
+            });
         }else if(filter == 'return'){
             this.setState({
                 listContent: 'dispatch-return'
@@ -78,6 +82,11 @@ class DispatcherPanel extends React.Component {
                 listContent = <div className="col-md-4">
                         <DispatcherCancelledList />
                     </div>;
+                break;
+            case 'dispatch-scheduled':
+                listContent = <div className="col-md-4">
+                    <DispatcherScheduledList />
+                </div>;
                 break;
             case 'dispatch-assign':
                 listContent = <div className="col-md-4">
@@ -304,41 +313,132 @@ class DispatcherCancelledList extends React.Component {
     }
 }
 
-
 class DispatcherCancelledListItem extends React.Component {
 
     render() {
         var listItem = function(trip) {
             return (
-                    <div className="il-item" key={trip.id}>
-                        <a className="text-black" href="#">
-                            <div className="media">
-                                <div className="media-body">
-                                    <p className="mb-0-5">{trip.user.first_name} {trip.user.last_name} 
+                <div className="il-item" key={trip.id}>
+                    <a className="text-black" href="#">
+                        <div className="media">
+                            <div className="media-body">
+                                <p className="mb-0-5">{trip.user.first_name} {trip.user.last_name}
                                     {trip.status == 'COMPLETED' ?
                                         <span className="tag tag-success pull-right"> {trip.status} </span>
-                                    : trip.status == 'CANCELLED' ?
-                                        <span className="tag tag-danger pull-right"> {trip.status} </span>
-                                    : trip.status == 'SEARCHING' ?
-                                        <span className="tag tag-warning pull-right"> {trip.status} </span>
-                                    : trip.status == 'SCHEDULED' ?
-                                        <span className="tag tag-primary pull-right"> {trip.status} </span>
-                                    : 
-                                        <span className="tag tag-info pull-right"> {trip.status} </span>
+                                        : trip.status == 'CANCELLED' ?
+                                            <span className="tag tag-danger pull-right"> {trip.status} </span>
+                                            : trip.status == 'SEARCHING' ?
+                                                <span className="tag tag-warning pull-right"> {trip.status} </span>
+                                                : trip.status == 'SCHEDULED' ?
+                                                    <span className="tag tag-primary pull-right"> {trip.status} </span>
+                                                    :
+                                                    <span className="tag tag-info pull-right"> {trip.status} </span>
                                     }
-                                    </p>
-                                    <h6 className="media-heading">From: {trip.s_address}</h6>
-                                    <h6 className="media-heading">To: {trip.d_address ? trip.d_address : "Not Selected"}</h6>
-                                    <h6 className="media-heading">Payment: {trip.payment_mode}</h6>
-                                    {(trip.status === 'COMPLETED' || trip.status === 'SCHEDULED' || trip.status === 'SEARCHING') ?
-                                        <progress className="progress progress-success progress-sm" max="100"></progress> : ''
-                                    }
-                                    <span className="text-muted">Cancelled at : {trip.updated_at}</span>
-                                </div>
+                                </p>
+                                <h6 className="media-heading">From: {trip.s_address}</h6>
+                                <h6 className="media-heading">To: {trip.d_address ? trip.d_address : "Not Selected"}</h6>
+                                <h6 className="media-heading">Payment: {trip.payment_mode}</h6>
+                                {(trip.status === 'COMPLETED' || trip.status === 'SCHEDULED' || trip.status === 'SEARCHING') ?
+                                    <progress className="progress progress-success progress-sm" max="100"></progress> : ''
+                                }
+                                <span className="text-muted">Cancelled at : {trip.updated_at}</span>
                             </div>
-                        </a>
-                    </div>
-                );
+                        </div>
+                    </a>
+                </div>
+            );
+        }.bind(this);
+
+        return (
+            <div className="items-list">
+                {this.props.data.map(listItem)}
+            </div>
+        );
+    }
+}
+
+class DispatcherScheduledList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {
+                data: []
+            }
+        };
+    }
+
+    componentDidMount() {
+        window.worldMapInitialize();
+        window.Tranxit.TripTimer = setInterval(
+            () => this.getTripsUpdate(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(window.Tranxit.TripTimer);
+    }
+
+    getTripsUpdate() {
+        $.get('/admin/dispatcher/trips?type=SCHEDULED', function(result) {
+            if(result.hasOwnProperty('data')) {
+                this.setState({
+                    data: result
+                });
+            } else {
+                this.setState({
+                    data: {
+                        data: []
+                    }
+                });
+            }
+        }.bind(this));
+    }
+
+    render() {
+        return (
+            <div className="card">
+                <div className="card-header text-uppercase"><b>Scheduled List</b></div>
+                <DispatcherScheduledListItem data={this.state.data.data} />
+            </div>
+        );
+    }
+}
+
+class DispatcherScheduledListItem extends React.Component {
+
+    render() {
+        var listItem = function(trip) {
+            return (
+                <div className="il-item" key={trip.id}>
+                    <a className="text-black" href="#">
+                        <div className="media">
+                            <div className="media-body">
+                                <p className="mb-0-5">{trip.user.first_name} {trip.user.last_name}
+                                    {trip.status == 'COMPLETED' ?
+                                        <span className="tag tag-success pull-right"> {trip.status} </span>
+                                        : trip.status == 'CANCELLED' ?
+                                            <span className="tag tag-danger pull-right"> {trip.status} </span>
+                                            : trip.status == 'SEARCHING' ?
+                                                <span className="tag tag-warning pull-right"> {trip.status} </span>
+                                                : trip.status == 'SCHEDULED' ?
+                                                    <span className="tag tag-primary pull-right"> {trip.status} </span>
+                                                    :
+                                                    <span className="tag tag-info pull-right"> {trip.status} </span>
+                                    }
+                                </p>
+                                <h6 className="media-heading">From: {trip.s_address}</h6>
+                                <h6 className="media-heading">To: {trip.d_address ? trip.d_address : "Not Selected"}</h6>
+                                <h6 className="media-heading">Payment: {trip.payment_mode}</h6>
+                                {(trip.status === 'COMPLETED' || trip.status === 'SCHEDULED' || trip.status === 'SEARCHING') ?
+                                    <progress className="progress progress-success progress-sm" max="100"></progress> : ''
+                                }
+                                <span className="text-muted">Scheduled at : {trip.scheduled_at}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            );
         }.bind(this);
 
         return (
