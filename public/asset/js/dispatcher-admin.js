@@ -411,6 +411,7 @@ class DispatcherScheduledListItem extends React.Component {
         var listItem = function(trip) {
             return (
                 <div className="il-item" key={trip.id}>
+                    <a className="btn btn-danger" href={"/admin/dispatcher/cancel?request_id=" + trip.id} >Cancel Ride</a>
                     <a className="text-black" href="#">
                         <div className="media">
                             <div className="media-body">
@@ -433,7 +434,7 @@ class DispatcherScheduledListItem extends React.Component {
                                 {(trip.status === 'COMPLETED' || trip.status === 'SCHEDULED' || trip.status === 'SEARCHING') ?
                                     <progress className="progress progress-success progress-sm" max="100"></progress> : ''
                                 }
-                                <span className="text-muted">Scheduled at : {trip.scheduled_at}</span>
+                                <span className="text-muted">Scheduled at : {trip.schedule_at}</span>
                             </div>
                         </div>
                     </a>
