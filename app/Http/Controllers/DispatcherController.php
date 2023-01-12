@@ -60,6 +60,8 @@ class DispatcherController extends Controller
 
         if($request->type == "SEARCHING"){
             $Trips = $Trips->where('status',$request->type);
+        }elseif($request->type == "SCHEDULED"){
+            $Trips = $Trips->where('status',$request->type);
         }else if($request->type == "CANCELLED"){
             $Trips = $Trips->where('status',$request->type);
         }
