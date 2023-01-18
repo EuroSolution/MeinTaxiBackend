@@ -137,10 +137,10 @@
 							</tr>
 
 							
-							<tr>
-								<th scope="row">Commission</th>
-								<td class="text-success">{{currency($wallet['admin_commission'])}}</td>
-							</tr>
+{{--							<tr>--}}
+{{--								<th scope="row">Commission</th>--}}
+{{--								<td class="text-success">{{currency($wallet['admin_commission'])}}</td>--}}
+{{--							</tr>--}}
 							<tr>
 								<th scope="row">Discount</th>
 								<td class="text-danger">{{currency($wallet['admin_discount'])}}</td>

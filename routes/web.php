@@ -2,7 +2,7 @@
 
 Route::get('exec-commands', function (){
     \Illuminate\Support\Facades\Artisan::call('schedule:run');
-    \Illuminate\Support\Facades\Log::info("Cron Commands Executed");
+//    \Illuminate\Support\Facades\Log::info("Cron Commands Executed");
 });
 
 

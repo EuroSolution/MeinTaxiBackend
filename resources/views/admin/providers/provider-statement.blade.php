@@ -29,7 +29,7 @@
 														<td>@lang('admin.status')</td>
 														<td>@lang('admin.provides.Total_Rides')</td>
 														<td>@lang('admin.provides.Total_Earning')</td>
-														<td>@lang('admin.provides.Commission')</td>
+{{--														<td>@lang('admin.provides.Commission')</td>--}}
 														<td>@lang('admin.provides.Joined_at')</td>
 														<td>@lang('admin.provides.Details')</td>
 													</tr>
@@ -68,13 +68,13 @@
 																	 	-
 																	@endif
 																</td>
-																<td>
-																	@if($provider->payment)
-																		{{currency($provider->payment[0]->commission)}}
-																	@else
-																	 	-
-																	@endif
-																</td>
+{{--																<td>--}}
+{{--																	@if($provider->payment)--}}
+{{--																		{{currency($provider->payment[0]->commission)}}--}}
+{{--																	@else--}}
+{{--																	 	---}}
+{{--																	@endif--}}
+{{--																</td>--}}
 																<td>
 																	@if($provider->created_at)
 																		<span class="text-muted">{{$provider->created_at->diffForHumans()}}</span>
@@ -95,7 +95,7 @@
 														<td>@lang('admin.status')</td>
 														<td>@lang('admin.provides.Total_Rides')</td>
 														<td>@lang('admin.provides.Total_Earning')</td>
-														<td>@lang('admin.provides.Commission')</td>
+{{--														<td>@lang('admin.provides.Commission')</td>--}}
 														<td>@lang('admin.provides.Joined_at')</td>
 														<td>@lang('admin.provides.Details')</td>
 													</tr>
