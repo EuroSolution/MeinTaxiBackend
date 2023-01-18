@@ -34,8 +34,8 @@
             	<div style="text-align: center;padding: 20px;color: blue;font-size: 24px;">
             		<p><strong>
             			<span>@lang('admin.dashboard.over_earning') : {{currency($revenue[0]->overall)}}</span>
-            			<br>
-            			<span>@lang('admin.dashboard.over_commission') : {{currency($revenue[0]->commission)}}</span>
+{{--            			<br>--}}
+{{--            			<span>@lang('admin.dashboard.over_commission') : {{currency($revenue[0]->commission)}}</span>--}}
             		</strong></p>
             	</div>
 
@@ -92,7 +92,7 @@
 														<td>@lang('admin.request.picked_up')</td>
 														<td>@lang('admin.request.dropped')</td>
 														<td>@lang('admin.request.request_details')</td>
-														<td>@lang('admin.request.commission')</td>
+{{--														<td>@lang('admin.request.commission')</td>--}}
 														<td>@lang('admin.request.date')</td>
 														<td>@lang('admin.request.status')</td>
 														<td>@lang('admin.request.earned')</td>
@@ -124,7 +124,7 @@
 																		<span>No Details Found </span>
 																	@endif									
 																</td>
-																<td>{{currency($ride->payment['provider_commission'])}}</td>
+{{--																<td>{{currency($ride->payment['provider_commission'])}}</td>--}}
 																<td>
 																	<span class="text-muted">{{date('d M Y',strtotime($ride->created_at))}}</span>
 																</td>
@@ -148,7 +148,7 @@
 														<td>@lang('admin.request.picked_up')</td>
 														<td>@lang('admin.request.dropped')</td>
 														<td>@lang('admin.request.request_details')</td>
-														<td>@lang('admin.request.commission')</td>
+{{--														<td>@lang('admin.request.commission')</td>--}}
 														<td>@lang('admin.request.date')</td>
 														<td>@lang('admin.request.status')</td>
 														<td>@lang('admin.request.earned')</td>

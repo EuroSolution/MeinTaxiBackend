@@ -121,33 +121,33 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="commission_percentage" class="col-xs-4 col-form-label">@lang('admin.payment.commission_percentage')</label>
-                            <div class="col-xs-8">
-                                <input class="form-control"
-                                    type="number"
-                                    value="{{ Setting::get('commission_percentage', '0') }}"
-                                    id="commission_percentage"
-                                    name="commission_percentage"
-                                    min="0"
-                                    max="100"
-                                    placeholder="Commission percentage">
-                            </div>
-                        </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="commission_percentage" class="col-xs-4 col-form-label">@lang('admin.payment.commission_percentage')</label>--}}
+{{--                            <div class="col-xs-8">--}}
+{{--                                <input class="form-control"--}}
+{{--                                    type="number"--}}
+{{--                                    value="{{ Setting::get('commission_percentage', '0') }}"--}}
+{{--                                    id="commission_percentage"--}}
+{{--                                    name="commission_percentage"--}}
+{{--                                    min="0"--}}
+{{--                                    max="100"--}}
+{{--                                    placeholder="Commission percentage">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="form-group row">
-                            <label for="fleet_commission_percentage" class="col-xs-4 col-form-label">@lang('admin.payment.fleet_commission_percentage') <span style="color:red">(It will work if admin commission 0%) </span> </label>
-                            <div class="col-xs-8">
-                                <input class="form-control"
-                                    type="number"
-                                    value="{{ Setting::get('fleet_commission_percentage') }}"
-                                    id="fleet_commission_percentage"
-                                    name="fleet_commission_percentage"
-                                    min="0"
-                                    max="100"
-                                    placeholder="Fleet Commission Percentage">
-                            </div>
-                        </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="fleet_commission_percentage" class="col-xs-4 col-form-label">@lang('admin.payment.fleet_commission_percentage') <span style="color:red">(It will work if admin commission 0%) </span> </label>--}}
+{{--                            <div class="col-xs-8">--}}
+{{--                                <input class="form-control"--}}
+{{--                                    type="number"--}}
+{{--                                    value="{{ Setting::get('fleet_commission_percentage') }}"--}}
+{{--                                    id="fleet_commission_percentage"--}}
+{{--                                    name="fleet_commission_percentage"--}}
+{{--                                    min="0"--}}
+{{--                                    max="100"--}}
+{{--                                    placeholder="Fleet Commission Percentage">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="form-group row">
                             <label for="booking_prefix" class="col-xs-4 col-form-label">@lang('admin.payment.booking_id_prefix')</label>

@@ -102,7 +102,7 @@
 				</a>
 				<ul>
 					<li><a href="{{ route('admin.providertransfer') }}">@lang('admin.include.provider_request')</a></li>
-					<li><a href="{{ route('admin.fleettransfer') }}">@lang('admin.include.fleet_request')</a></li>
+{{--					<li><a href="{{ route('admin.fleettransfer') }}">@lang('admin.include.fleet_request')</a></li>--}}
 					<li><a href="{{ route('admin.transactions') }}">@lang('admin.include.all_transaction')</a></li>
 				</ul>
 			</li>
