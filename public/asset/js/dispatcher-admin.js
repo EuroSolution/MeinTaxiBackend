@@ -510,6 +510,7 @@ class DispatcherRequest extends React.Component {
         new Switchery(document.getElementById('provider_auto_assign'));
         
         // Schedule Time Datepicker
+        $.datetimepicker.setLocale('de');
         $('#schedule_time').datetimepicker({
             minDate: window.Tranxit.minDate,
             maxDate: window.Tranxit.maxDate,
