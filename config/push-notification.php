@@ -16,7 +16,7 @@ return array(
     ),
     'Android' => array(
         'environment' => env('ANDROID_ENV', 'production'),
-        'apiKey'      => env('ANDROID_PUSH_KEY', 'AAAAKB5GiOE:APA91bGVRAI-Al04AbT8xwW6UsF_Q6tc6C5JJdPDdDbK5fH1KNlY9EnTZqH1x1LHk5fv3GF4mn28dN3ZRPj_bmV6g2evfu3CspxyBCd_LxaJWcOSwTwWrb_2AdSMzTHzu3yUys7zQxU9'),
+        'apiKey'      => env('ANDROID_PUSH_KEY', 'AAAAomOznTU:APA91bG5TV9xZHAAyH3gzmC569sPjkD0paxdjbexFypH0IEbOgwsHyrLo9S7OjTo4CJoeF8FGsJKEYr7dWjjp6vwq0S2cvanHHa5TVdSY2yyKwckZtdk29UKKoNc9iLbFN_tpz2zIyWa'),
         'service'     => 'fcm'
     ),
 );
