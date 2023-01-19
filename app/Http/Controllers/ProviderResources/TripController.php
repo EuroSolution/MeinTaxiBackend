@@ -577,8 +577,7 @@ class TripController extends Controller
 
                 (new SendPushNotification)->Complete($UserRequest);
             }else if ($request->status == 'COMPLETED' && $UserRequest->payment_mode == 'CASH') {
-                $UserRequest->kv_photo = $request->kv_photo;
-                $UserRequest->meter_amount = $request->meter_amount;
+
                 if($UserRequest->status=='COMPLETED'){
                     //for off cross clicking on change payment issue on mobile
                     return true;
@@ -593,6 +592,8 @@ class TripController extends Controller
                 $RequestPayment->payment_mode = 'CASH';
                 $RequestPayment->cash = $RequestPayment->payable;
                 $RequestPayment->payable = 0;
+                $RequestPayment->kv_photo = $request->kv_photo;
+                $RequestPayment->meter_amount = $request->meter_amount;
                 $RequestPayment->save();
 
             }else {
