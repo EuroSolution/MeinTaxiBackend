@@ -22,11 +22,13 @@ class UserRequestPayment extends Model
         'discount','discount_per',
         'tax','tax_per',
         'total',
+        'meter_amount',
         'wallet','is_partial','cash','online','tips',
         'payable',
         'provider_commission',
         'provider_pay',
-        'surge'
+        'surge',
+        'kv_photo'
     ];
 
     /**
