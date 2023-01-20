@@ -22,7 +22,7 @@ $(document).ready(function() {
     } );
 
     $('#table-4').DataTable( {
-        responsive: true,
+        responsive: false,
 	    paging:false,
         info:false,
         dom: 'Bfrtip',
