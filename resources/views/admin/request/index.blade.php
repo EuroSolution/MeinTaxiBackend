@@ -28,7 +28,7 @@
                         <th>@lang('admin.request.kf_receipt')</th>
                         <th>@lang('admin.request.Payment_Mode')</th>
                         <th>@lang('admin.request.Payment_Status')</th>
-                        <th>@lang('admin.action')</th>
+                        <th width="15px">@lang('admin.action')</th>
                     </tr>
                 </thead>
                 <tbody>
