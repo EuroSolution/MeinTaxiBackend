@@ -25,7 +25,7 @@
                         <th>@lang('admin.status')</th>
                         <th>@lang('admin.amount')</th>
                         <th>@lang('admin.request.meter_amount')</th>
-                        <th>@lang('admin.request.kf_photo')</th>
+                        <th>@lang('admin.request.kf_receipt')</th>
                         <th>@lang('admin.request.Payment_Mode')</th>
                         <th>@lang('admin.request.Payment_Status')</th>
                         <th>@lang('admin.action')</th>
@@ -121,7 +121,7 @@
                         <th>@lang('admin.status')</th>
                         <th>@lang('admin.amount')</th>
                         <th>@lang('admin.request.meter_amount')</th>
-                        <th>@lang('admin.request.kf_photo')</th>
+                        <th>@lang('admin.request.kf_receipt')</th>
                         <th>@lang('admin.request.Payment_Mode')</th>
                         <th>@lang('admin.request.Payment_Status')</th>
                         <th>@lang('admin.action')</th>
