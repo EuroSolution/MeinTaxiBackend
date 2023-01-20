@@ -74,7 +74,7 @@
                         </td>
                         <td>
                             @if($request->payment != "" && $request->payment->kf_photo != null)
-                                <img src="data:image/png;base64, {{$request->payment->kf_photo}}" />
+                                <img src="data:image/png;base64, {{$request->payment->kf_photo}}" width="30" height="30"/>
                             @else
                                 N/A
                             @endif
