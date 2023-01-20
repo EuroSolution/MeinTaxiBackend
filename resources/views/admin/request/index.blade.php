@@ -24,6 +24,8 @@
                         <th>@lang('admin.request.Date_Time')</th>
                         <th>@lang('admin.status')</th>
                         <th>@lang('admin.amount')</th>
+                        <th>@lang('admin.request.meter_amount')</th>
+                        <th>@lang('admin.request.kf_photo')</th>
                         <th>@lang('admin.request.Payment_Mode')</th>
                         <th>@lang('admin.request.Payment_Status')</th>
                         <th>@lang('admin.action')</th>
@@ -59,6 +61,20 @@
                         <td>
                             @if($request->payment != "")
                                 {{ currency($request->payment->total) }}
+                            @else
+                                N/A
+                            @endif
+                        </td>
+                        <td>
+                            @if($request->payment != "")
+                                {{ currency($request->payment->meter_amount) }}
+                            @else
+                                N/A
+                            @endif
+                        </td>
+                        <td>
+                            @if($request->payment != "" && $request->payment->kf_photo != null)
+                                <img src="data:image/png;base64, {{$request->payment->kf_photo}}" />
                             @else
                                 N/A
                             @endif
@@ -104,6 +120,8 @@
                         <th>@lang('admin.request.Date_Time')</th>
                         <th>@lang('admin.status')</th>
                         <th>@lang('admin.amount')</th>
+                        <th>@lang('admin.request.meter_amount')</th>
+                        <th>@lang('admin.request.kf_photo')</th>
                         <th>@lang('admin.request.Payment_Mode')</th>
                         <th>@lang('admin.request.Payment_Status')</th>
                         <th>@lang('admin.action')</th>
