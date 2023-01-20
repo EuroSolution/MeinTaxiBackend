@@ -91,11 +91,11 @@
                             <dt class="col-sm-4">@lang('admin.request.distance_price') :</dt>
                             <dd class="col-sm-8">{{ currency($request->payment->distance) }}</dd>
                         @endif                           
-                        <dt class="col-sm-4">@lang('admin.request.commission') :</dt>
-                        <dd class="col-sm-8">{{ currency($request->payment->commision) }}</dd>
+{{--                        <dt class="col-sm-4">@lang('admin.request.commission') :</dt>--}}
+{{--                        <dd class="col-sm-8">{{ currency($request->payment->commision) }}</dd>--}}
 
-                        <dt class="col-sm-4">@lang('admin.request.fleet_commission') :</dt>
-                        <dd class="col-sm-8">{{ currency($request->payment->fleet) }}</dd>
+{{--                        <dt class="col-sm-4">@lang('admin.request.fleet_commission') :</dt>--}}
+{{--                        <dd class="col-sm-8">{{ currency($request->payment->fleet) }}</dd>--}}
 
                         <dt class="col-sm-4">@lang('admin.request.discount_price') :</dt>
                         <dd class="col-sm-8">{{ currency($request->payment->discount) }}</dd>
@@ -108,6 +108,9 @@
 
                         <dt class="col-sm-4">@lang('admin.request.tips') :</dt>
                         <dd class="col-sm-8">{{ currency($request->payment->tips) }}</dd>
+
+                        <dt class="col-sm-4">@lang('admin.request.meter_amount') :</dt>
+                        <dd class="col-sm-8">{{ currency($request->payment->meter_amount) }}</dd>
 
                         <dt class="col-sm-4">@lang('admin.request.total_amount') :</dt>
                         <dd class="col-sm-8">{{ currency($request->payment->total+$request->payment->tips) }}</dd>
@@ -128,6 +131,14 @@
                         <dt class="col-sm-4">@lang('admin.request.ride_status') : </dt>
                         <dd class="col-sm-8">
                             {{ $request->status }}
+                        </dd>
+                        <dt class="col-sm-4">@lang('admin.request.kf_receipt') : </dt>
+                        <dd class="col-sm-8">
+                            @if($request->payment != "" && $request->payment->kf_photo != null)
+                                <img src="data:image/png;base64, {{$request->payment->kf_photo}}" width="50" height="50"/>
+                            @else
+                                N/A
+                            @endif
                         </dd>
 
                     </dl>
