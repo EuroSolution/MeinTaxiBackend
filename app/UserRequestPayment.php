@@ -28,7 +28,7 @@ class UserRequestPayment extends Model
         'provider_commission',
         'provider_pay',
         'surge',
-        'kv_photo'
+        'kf_photo'
     ];
 
     /**
