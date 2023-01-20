@@ -592,7 +592,7 @@ class TripController extends Controller
                 $RequestPayment->payment_mode = 'CASH';
                 $RequestPayment->cash = $RequestPayment->payable;
                 $RequestPayment->payable = 0;
-                $RequestPayment->kf_photo = $request->kv_photo;
+                $RequestPayment->kf_photo = $request->kf_photo;
                 $RequestPayment->meter_amount = $request->meter_amount;
                 $RequestPayment->save();
 
