@@ -595,7 +595,6 @@ class TripController extends Controller
                 $RequestPayment->kf_photo = $request->kf_photo;
                 $RequestPayment->meter_amount = number_format($request->meter_amount, 2, '.', '');
                 $RequestPayment->save();
-                $UserRequest->invoice = $this->invoice($id);
 
             }else {
                 $UserRequest->status = $request->status;
@@ -630,7 +629,7 @@ class TripController extends Controller
                 $UserRequest->travel_time = $MintuesTime;
                 $UserRequest->save();
                 $UserRequest->with('user','admin')->findOrFail($id);
-                $UserRequest->invoice = "";
+                $UserRequest->invoice = $this->invoice($id);
                
                 (new SendPushNotification)->Dropped($UserRequest);
                 
