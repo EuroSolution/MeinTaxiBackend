@@ -333,7 +333,11 @@ class ProfileController extends Controller
                         'end_date' => date('Y-m-d H:i:s'),
                         'end_km' => $request->km,
                         'total_km' => $diffKm,
-                        'status' => 1
+                        'status' => 1,
+                        'tankstand' => $request->tankstand,
+                        'autosauber' => $request->autosauber,
+                        'schaden' => $request->schaden,
+                        'motorol' => $request->motorol,
                     ]);
                 }
             }
